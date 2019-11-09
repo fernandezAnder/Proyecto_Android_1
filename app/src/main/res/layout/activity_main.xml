@@ -7,7 +7,7 @@
     tools:context=".MainActivity" >
 
     <EditText
-        android:id="@+id/text_usuario"
+        android:id="@+id/usuarioTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
@@ -16,11 +16,11 @@
         android:hint="Usuario"
         android:inputType="textPersonName"
         android:textIsSelectable="true"
-        app:layout_constraintBottom_toTopOf="@+id/text_password"
+        app:layout_constraintBottom_toTopOf="@+id/passwdTxt"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/text_password"
+        android:id="@+id/passwdTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
@@ -41,7 +41,7 @@
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/text_usuario"
+        app:layout_constraintBottom_toTopOf="@+id/usuarioTxt"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
