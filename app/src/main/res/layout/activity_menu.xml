@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu">
+
+    <Button
+        android:id="@+id/button_nueva"
+        android:layout_width="244dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="140dp"
+        android:onClick="nuevaTarea"
+        android:text="Nueva Tarea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_lista" />
+
+    <Button
+        android:id="@+id/button_lista"
+        android:layout_width="244dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="164dp"
+        android:onClick="ListaTareas"
+        android:text="Lista de Tareas"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

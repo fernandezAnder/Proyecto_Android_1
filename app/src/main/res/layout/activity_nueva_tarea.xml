@@ -6,12 +6,32 @@
     android:layout_height="match_parent"
     tools:context=".Nueva_tarea">
 
+    <TextView
+        android:id="@+id/text_prioridad"
+        android:layout_width="95dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="40dp"
+        android:text="Prioridad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_fecha" />
+
+    <Spinner
+        android:id="@+id/spinner_prioridad"
+        android:layout_width="72dp"
+        android:layout_height="33dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="40dp"
+        android:visibility="visible"
+        app:layout_constraintStart_toEndOf="@+id/text_prioridad"
+        app:layout_constraintTop_toBottomOf="@+id/text_coste" />
+
     <EditText
         android:id="@+id/text_nombre"
         android:layout_width="315dp"
         android:layout_height="51dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="92dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:hint="Nombre Tarea"
         android:inputType="textPersonName"
@@ -20,8 +40,8 @@
 
     <EditText
         android:id="@+id/text_descrip"
-        android:layout_width="316dp"
-        android:layout_height="155dp"
+        android:layout_width="319dp"
+        android:layout_height="86dp"
         android:layout_marginStart="60dp"
         android:layout_marginTop="40dp"
         android:ems="10"
@@ -38,6 +58,7 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="48dp"
         android:ems="10"
+        android:hint="fecha"
         android:inputType="date"
         app:layout_constraintEnd_toStartOf="@+id/text_coste"
         app:layout_constraintTop_toBottomOf="@+id/text_descrip" />
@@ -49,6 +70,7 @@
         android:layout_marginTop="56dp"
         android:layout_marginEnd="36dp"
         android:ems="10"
+        android:hint="coste"
         android:inputType="numberDecimal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_descrip" />
@@ -58,16 +80,39 @@
         android:layout_width="95dp"
         android:layout_height="30dp"
         android:layout_marginStart="64dp"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="32dp"
         android:text="Realizada"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_fecha" />
+        app:layout_constraintTop_toBottomOf="@+id/text_prioridad" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner_sino"
         android:layout_width="72dp"
         android:layout_height="33dp"
-        tools:layout_editor_absoluteX="210dp"
-        tools:layout_editor_absoluteY="536dp" />
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toEndOf="@+id/text_realizada"
+        app:layout_constraintTop_toBottomOf="@+id/text_coste" />
+
+    <Button
+        android:id="@+id/button_confirmar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="44dp"
+        android:onClick="confirmar"
+        android:text="Confirmar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_realizada" />
+
+    <Button
+        android:id="@+id/button_cancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="100dp"
+        android:text="Cancelar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_sino" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
