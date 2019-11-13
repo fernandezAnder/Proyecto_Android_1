@@ -11,48 +11,48 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginTop="80dp"
         android:ems="10"
         android:hint="Usuario"
         android:inputType="textPersonName"
         android:textIsSelectable="true"
-        app:layout_constraintBottom_toTopOf="@+id/passwdTxt"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <EditText
         android:id="@+id/passwdTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
-        android:layout_marginBottom="44dp"
+        android:layout_marginTop="40dp"
         android:ems="10"
         android:hint="Contraseña"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usuarioTxt" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="196dp"
         android:layout_height="48dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginBottom="56dp"
-        android:text="Iniciar Sesión"
+        android:layout_marginStart="104dp"
+        android:layout_marginTop="84dp"
+        android:text="@string/login"
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/usuarioTxt"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/login_button"
         android:layout_width="214dp"
         android:layout_height="57dp"
         android:layout_marginStart="84dp"
-        android:layout_marginBottom="324dp"
+        android:layout_marginTop="112dp"
         android:onClick="login"
         android:text="Login"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwdTxt" />
 </androidx.constraintlayout.widget.ConstraintLayout>

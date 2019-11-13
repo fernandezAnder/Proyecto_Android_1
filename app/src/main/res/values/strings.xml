@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Proyecto_primera_evaluacion</string>
+    <string name="app_name">TAREATOR</string>
+    <string name="login">Login</string>
 </resources>

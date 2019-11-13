@@ -7,10 +7,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.EditText;
 
 import java.io.Console;
+
+import static java.nio.file.attribute.AclEntryPermission.DELETE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,11 +22,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bbdd conexion = new bbdd(this);
-        SQLiteDatabase basedatos = conexion.getReadableDatabase();
+        SQLiteDatabase basedatos = conexion.getWritableDatabase();
 
         if (basedatos != null){
-        basedatos.execSQL("INSERT INTO tareas ( nombre , descripcion ,fecha , coste ,prioridad , realizada ) VALUES ('Prueba1','creacion de consulta','01/01/9999','5','Alta','Si')");
+
+        basedatos.execSQL("delete  from tareas");
+        basedatos.execSQL("INSERT INTO tareas ( nombre , descripcion ,fecha , coste ,prioridad , realizada ) VALUES ('Sacar al perro','creacion de consulta','01/01/9999','5','Alta','Si')");
+        basedatos.execSQL("INSERT INTO tareas ( nombre , descripcion ,fecha , coste ,prioridad , realizada ) VALUES ('Recoger al crio','creacion de consulta','01/01/9999','5','Normal','No')");
+        basedatos.execSQL("INSERT INTO tareas ( nombre , descripcion ,fecha , coste ,prioridad , realizada ) VALUES ('Robar','creacion de consulta','01/01/9999','5','Baja','Si')");
+        basedatos.execSQL("INSERT INTO tareas ( nombre , descripcion ,fecha , coste ,prioridad , realizada ) VALUES ('Siesta','creacion de consulta','01/01/9999','5','Alta','No')");
+
         }
+
 
         SharedPreferences prefs =
                 getSharedPreferences("MisPreferencias", Context.MODE_PRIVATE);
@@ -57,3 +67,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 }
+
