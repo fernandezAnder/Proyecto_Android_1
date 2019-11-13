@@ -6,4 +6,68 @@
     android:layout_height="match_parent"
     tools:context=".Nueva_tarea">
 
+    <EditText
+        android:id="@+id/text_nombre"
+        android:layout_width="315dp"
+        android:layout_height="51dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="92dp"
+        android:ems="10"
+        android:hint="Nombre Tarea"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/text_descrip"
+        android:layout_width="316dp"
+        android:layout_height="155dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="40dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="Descripcion"
+        android:inputType="textMultiLine"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_nombre" />
+
+    <EditText
+        android:id="@+id/text_fecha"
+        android:layout_width="137dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="48dp"
+        android:ems="10"
+        android:inputType="date"
+        app:layout_constraintEnd_toStartOf="@+id/text_coste"
+        app:layout_constraintTop_toBottomOf="@+id/text_descrip" />
+
+    <EditText
+        android:id="@+id/text_coste"
+        android:layout_width="124dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="36dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_descrip" />
+
+    <TextView
+        android:id="@+id/text_realizada"
+        android:layout_width="95dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="100dp"
+        android:text="Realizada"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_fecha" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="72dp"
+        android:layout_height="33dp"
+        tools:layout_editor_absoluteX="210dp"
+        tools:layout_editor_absoluteY="536dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
