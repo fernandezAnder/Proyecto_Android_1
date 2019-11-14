@@ -96,8 +96,8 @@
 
     <Button
         android:id="@+id/button_confirmar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="99dp"
+        android:layout_height="47dp"
         android:layout_marginStart="72dp"
         android:layout_marginTop="44dp"
         android:onClick="confirmar"

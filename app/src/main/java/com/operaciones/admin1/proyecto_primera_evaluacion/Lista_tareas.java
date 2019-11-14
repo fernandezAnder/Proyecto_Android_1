@@ -2,9 +2,11 @@ package com.operaciones.admin1.proyecto_primera_evaluacion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
@@ -43,14 +45,30 @@ public class Lista_tareas extends AppCompatActivity {
         }
 
         for (String tarea : lista_tareas){
-            Button button = new Button(this);
+            final Button button = new Button(this);
             //Asignamos propiedades de layout al boton
             button.setLayoutParams(lp);
             //Asignamos Texto al botón
             button.setText(tarea);
+            button.setLongClickable(true);
+            button.setClickable(true);
+
+            button.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    String nombre = button.getText().toString();
+                    Intent intent = new Intent (v.getContext(), Detalles_tarea.class);
+                    intent.putExtra("Id",nombre);
+                    startActivityForResult(intent, 0);
+                }
+            });
+
             //Añadimos el botón a la botonera
             llBotonera.addView(button);
         }
+
+    }
+
+    protected void detallesTarea(){
 
     }
 }

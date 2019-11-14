@@ -2,6 +2,7 @@ package com.operaciones.admin1.proyecto_primera_evaluacion;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -55,29 +56,30 @@ public class Nueva_tarea extends AppCompatActivity {
         if (!"".equals(nombre) |!"".equals(descripcion) |!"".equals(fecha) |!"".equals(coste) |!"".equals(prioridad) |!"".equals(realizada)){
             bbdd conexion = new bbdd(this);
             SQLiteDatabase basedatos = conexion.getWritableDatabase();
-            String sql= "INSERT INTO tareas ( nombre , descripcion ,fecha , coste ,prioridad , realizada ) VALUES ("+nombre+","+descripcion+","+fecha+","+coste+","+prioridad+","+realizada+")";
+            String sql= "INSERT INTO tareas ( nombre , descripcion ,fecha , coste ,prioridad , realizada ) VALUES ("+"'"+nombre+"'"+","+"'"+descripcion+"'"+","+"'"+fecha+"'"+","+"'"+coste+"'"+","+"'"+prioridad+"'"+","+"'"+realizada+"'"+")";
+
+
+
             if (basedatos != null) {
-                try{
-                    basedatos.rawQuery(sql,null);
-                }catch (SQLException e){
+                try {
+                    basedatos.execSQL(sql);
+
+            }catch (SQLException e){
                     System.out.println(e.getMessage());
                 }
-
-
-                Cursor cursor = basedatos.rawQuery("SELECT nombre FROM tareas",null);
-
-                if (cursor != null) {
-                    cursor.moveToFirst();
-                    String nombres;
-                    do {
-                        nombres = cursor.getString(cursor.getColumnIndex("nombre"));
-                        System.out.println(nombres);
-                    } while (cursor.moveToNext());
-                }
-
             }
-
-            }
+        Intent i;
+            i = new Intent(this, Menu.class);
+            startActivity(i);
 
     }
+
 }
+    protected void cancelar(View view){
+        Intent i;
+        i = new Intent(this, Menu.class);
+
+        startActivity(i);
+    }
+
+    }
