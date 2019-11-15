@@ -8,7 +8,8 @@ import android.os.Bundle;
 
 public class Detalles_tarea extends AppCompatActivity {
 
-    @Override
+
+    Tarea tarea = new Tarea("","","","","","");
     protected void onCreate(Bundle savedInstanceState,String nombre) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_tarea);
@@ -17,16 +18,22 @@ public class Detalles_tarea extends AppCompatActivity {
         SQLiteDatabase basedatos = conexion.getReadableDatabase();
 
         if (basedatos != null){
-            String sql = "SELECT * FROM tareas WHERE nombre ="+"'"+nombre+",";
 
-            /*
+
+            Cursor cursor = basedatos.rawQuery("SELECT * FROM tareas WHERE nombre = '"+nombre+"'",null);
+
+
             if (cursor != null) {
                 cursor.moveToFirst();
-                String nombre;
                 do {
-                    nombre = cursor.getString(cursor.getColumnIndex("nombre"));
-
+                    tarea.setNombre(cursor.getString(cursor.getColumnIndex("nombre")));
+                    tarea.setDescripcion(cursor.getString(cursor.getColumnIndex("descripcion")));
+                    tarea.setFecha(cursor.getString(cursor.getColumnIndex("fecha")));
+                    tarea.setCoste(cursor.getString(cursor.getColumnIndex("coste")));
+                    tarea.setPrioridad(cursor.getString(cursor.getColumnIndex("prioridad")));
+                    tarea.setRealizada(cursor.getString(cursor.getColumnIndex("realizada")));
                 } while (cursor.moveToNext());
-            }*/}
+            }
+        }
     }
 }

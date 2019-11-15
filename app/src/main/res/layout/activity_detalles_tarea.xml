@@ -1,9 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/detalle_fecha"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:textAlignment="center"
     tools:context=".Detalles_tarea">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/detalle_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="94dp" />
+
+    <TextView
+        android:id="@+id/detalle_descrip"
+        android:layout_width="match_parent"
+        android:layout_height="78dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="72dp" />
+
+    <TextView
+        android:id="@+id/detalle_prioridad"
+        android:layout_width="match_parent"
+        android:layout_height="75dp" />
+
+    <TextView
+        android:id="@+id/detalle_coste"
+        android:layout_width="match_parent"
+        android:layout_height="49dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/detalle_volver"
+            android:layout_width="137dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="48dp"
+            android:layout_marginBottom="72dp"
+            android:text="Volver"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <Button
+            android:id="@+id/detalle_modificar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="58dp"
+            android:layout_marginBottom="82dp"
+            android:text="Modificar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

@@ -7,8 +7,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.ListAdapter;
+import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.prefs.Preferences;
@@ -16,13 +21,14 @@ import java.util.prefs.Preferences;
 public class Lista_tareas extends AppCompatActivity {
 
     ArrayList <String> lista_tareas = new ArrayList<String>();
+
+    ListView lista ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_lista_tareas);
-        LinearLayout llBotonera = (LinearLayout) findViewById(R.id.botonera);
-        LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT );
+
         bbdd conexion = new bbdd(this);
         SQLiteDatabase basedatos = conexion.getReadableDatabase();
 
@@ -34,41 +40,30 @@ public class Lista_tareas extends AppCompatActivity {
                 String nombre;
                 do {
                     nombre = cursor.getString(cursor.getColumnIndex("nombre"));
-                   lista_tareas.add(nombre);
+                    lista_tareas.add(nombre);
+
+
                 } while (cursor.moveToNext());
             }
-
             }
+        lista = findViewById(R.id.listview);
 
-        for (int i=0;i<lista_tareas.size();i++){
-            System.out.println(lista_tareas.get(i));
-        }
+        ArrayAdapter<String> adapter=new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, lista_tareas);
+        lista.setAdapter(adapter);
 
-        for (String tarea : lista_tareas){
-            final Button button = new Button(this);
-            //Asignamos propiedades de layout al boton
-            button.setLayoutParams(lp);
-            //Asignamos Texto al botón
-            button.setText(tarea);
-            button.setLongClickable(true);
-            button.setClickable(true);
+        lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView adapterView, View view, int position, long l) {
+                String nombre = (String) lista.getItemAtPosition(position);
+                Intent i;
+                i = new Intent(Lista_tareas.this, Detalles_tarea.class);
+                i.putExtra("Id",nombre);
+                startActivity(i);
+            }
+        });
 
-            button.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View v) {
-                    String nombre = button.getText().toString();
-                    Intent intent = new Intent (v.getContext(), Detalles_tarea.class);
-                    intent.putExtra("Id",nombre);
-                    startActivityForResult(intent, 0);
-                }
-            });
 
-            //Añadimos el botón a la botonera
-            llBotonera.addView(button);
-        }
 
     }
 
-    protected void detallesTarea(){
-
-    }
 }

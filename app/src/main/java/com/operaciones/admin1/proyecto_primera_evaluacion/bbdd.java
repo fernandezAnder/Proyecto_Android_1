@@ -10,6 +10,7 @@ public class bbdd extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
 
     public bbdd(Context context) {
+
         super(context, DB_NAME, null, DB_VERSION);
     }
     @Override
