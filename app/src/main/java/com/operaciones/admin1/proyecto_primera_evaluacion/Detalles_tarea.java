@@ -23,7 +23,7 @@ public class Detalles_tarea extends AppCompatActivity {
         bbdd conexion = new bbdd(this);
         SQLiteDatabase basedatos = conexion.getReadableDatabase();
         String nombre = getIntent().getExtras().getString("nombre");
-        System.out.println("EL NOMBRE ES -------"+nombre);
+
         if (basedatos != null){
 
 
