@@ -55,9 +55,11 @@ public class Lista_tareas extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView adapterView, View view, int position, long l) {
                 String nombre = (String) lista.getItemAtPosition(position);
+
+
                 Intent i;
                 i = new Intent(Lista_tareas.this, Detalles_tarea.class);
-                i.putExtra("Id",nombre);
+                i.putExtra("nombre",nombre);
                 startActivity(i);
             }
         });
