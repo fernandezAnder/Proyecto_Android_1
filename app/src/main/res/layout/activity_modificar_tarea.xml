@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Nueva_tarea">
+    tools:context=".Modificar_tarea">
 
     <TextView
         android:id="@+id/text_prioridad"
@@ -98,7 +98,7 @@
         android:id="@+id/button_confirmar"
         android:layout_width="116dp"
         android:layout_height="47dp"
-        android:layout_marginStart="52dp"
+        android:layout_marginStart="40dp"
         android:layout_marginTop="40dp"
         android:onClick="confirmar"
         android:text="Confirmar"

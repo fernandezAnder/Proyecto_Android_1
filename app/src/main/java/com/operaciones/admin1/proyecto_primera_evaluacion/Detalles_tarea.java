@@ -1,5 +1,6 @@
 package com.operaciones.admin1.proyecto_primera_evaluacion;
 
+import androidx.annotation.ColorRes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -60,7 +62,7 @@ public class Detalles_tarea extends AppCompatActivity {
              detalle_prioridad.setTextColor(Color.RED);
          }
         if ("Normal".equals(tarea.getPrioridad())){
-            detalle_prioridad.setTextColor(Color.YELLOW);
+            detalle_prioridad.setTextColor(Color.BLACK);
         }
         if ("Baja".equals(tarea.getPrioridad())){
             detalle_prioridad.setTextColor(Color.GREEN);
@@ -69,14 +71,14 @@ public class Detalles_tarea extends AppCompatActivity {
 
     }
 
-    protected void modificar (View view){
+    public void modificar (View view){
         Intent i;
         String detalle_nombre = tarea.getNombre();
-        i = new Intent(this, Nueva_tarea.class);
+        i = new Intent(this, Modificar_tarea.class);
         i.putExtra("nombre",detalle_nombre);
         startActivity(i);
     }
-    protected void volver(View view){
+    public void volver(View view){
         Intent i;
         i = new Intent(this, Lista_tareas.class);
         startActivity(i);
