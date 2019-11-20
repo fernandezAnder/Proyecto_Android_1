@@ -222,7 +222,7 @@ public class Lista_tareas extends AppCompatActivity {
                     public void setQwertyMode(boolean isQwerty) {
 
                     }
-                }
+                };
                 return false;
             }
         });
