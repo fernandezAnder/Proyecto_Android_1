@@ -3,6 +3,7 @@ package com.operaciones.admin1.proyecto_primera_evaluacion;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteDatabase;
@@ -21,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bbdd conexion = new bbdd(this);
+        bbdd conexion = new bbdd( this);
         SQLiteDatabase basedatos = conexion.getWritableDatabase();
 
         if (basedatos != null){

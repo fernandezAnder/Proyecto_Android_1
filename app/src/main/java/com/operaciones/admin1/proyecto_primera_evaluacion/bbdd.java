@@ -1,6 +1,7 @@
 package com.operaciones.admin1.proyecto_primera_evaluacion;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -13,6 +14,8 @@ public class bbdd extends SQLiteOpenHelper {
 
         super(context, DB_NAME, null, DB_VERSION);
     }
+
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(COMMENTS_TABLE_CREATE);

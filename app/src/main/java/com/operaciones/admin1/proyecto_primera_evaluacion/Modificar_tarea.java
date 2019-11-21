@@ -89,6 +89,7 @@ public class Modificar_tarea extends AppCompatActivity {
         if (!"".equals(nombre) |!"".equals(descripcion) |!"".equals(fecha) |!"".equals(coste) |!"".equals(prioridad) |!"".equals(realizada)){
             bbdd conexion = new bbdd(this);
             SQLiteDatabase basedatos = conexion.getWritableDatabase();
+            basedatos.execSQL("delete from tareas where nombre = '"+nombre+"'");
             String sql= "INSERT INTO tareas ( nombre , descripcion ,fecha , coste ,prioridad , realizada ) VALUES ("+"'"+nombre+"'"+","+"'"+descripcion+"'"+","+"'"+fecha+"'"+","+"'"+coste+"'"+","+"'"+prioridad+"'"+","+"'"+realizada+"'"+")";
 
 
