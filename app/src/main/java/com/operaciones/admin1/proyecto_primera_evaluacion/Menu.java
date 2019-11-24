@@ -18,10 +18,12 @@ public class Menu extends AppCompatActivity {
         Intent i;
         i = new Intent(this, Nueva_tarea.class);
         startActivity(i);
+
     }
     public void ListaTareas(View view){
         Intent i;
         i = new Intent(this, Lista_tareas.class);
         startActivity(i);
+
     }
 }

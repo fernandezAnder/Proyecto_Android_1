@@ -77,10 +77,12 @@ public class Detalles_tarea extends AppCompatActivity {
         i = new Intent(this, Modificar_tarea.class);
         i.putExtra("nombre",detalle_nombre);
         startActivity(i);
+        this.finish();
     }
     public void volver(View view){
         Intent i;
         i = new Intent(this, Lista_tareas.class);
         startActivity(i);
+        this.finish();
     }
 }

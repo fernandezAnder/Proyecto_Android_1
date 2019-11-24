@@ -65,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         if ( usuario_textbox.equals(usuario) && passwd_textbox.equals(passwd)) {
             i = new Intent(this, Menu.class);
             startActivity(i);
+            this.finish();
         }
     }
 }

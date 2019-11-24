@@ -105,6 +105,7 @@ public class Modificar_tarea extends AppCompatActivity {
         Intent i;
             i = new Intent(this, Lista_tareas.class);
             startActivity(i);
+            this.finish();
 
     }
 
@@ -113,6 +114,7 @@ public class Modificar_tarea extends AppCompatActivity {
         Intent i;
         i = new Intent(this, Detalles_tarea.class);
         startActivity(i);
+        this.finish();
     }
 
     }

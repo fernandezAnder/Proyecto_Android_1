@@ -73,6 +73,7 @@ public class Nueva_tarea extends AppCompatActivity {
         Intent i;
             i = new Intent(this, Menu.class);
             startActivity(i);
+            this.finish();
 
     }
 
@@ -81,6 +82,7 @@ public class Nueva_tarea extends AppCompatActivity {
         Intent i;
         i = new Intent(this, Menu.class);
         startActivity(i);
+        this.finish();
     }
 
 

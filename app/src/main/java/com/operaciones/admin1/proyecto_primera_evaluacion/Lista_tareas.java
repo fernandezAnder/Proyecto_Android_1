@@ -68,6 +68,8 @@ public class Lista_tareas extends AppCompatActivity {
                 i = new Intent(Lista_tareas.this, Detalles_tarea.class);
                 i.putExtra("nombre",nombre);
                 startActivity(i);
+                finish();
+
             }
         });
 
