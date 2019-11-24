@@ -7,24 +7,24 @@
     tools:context=".Menu">
 
     <Button
-        android:id="@+id/button_nueva"
-        android:layout_width="244dp"
-        android:layout_height="112dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="72dp"
-        android:onClick="nuevaTarea"
-        android:text="Nueva Tarea"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_lista" />
-
-    <Button
         android:id="@+id/button_lista"
         android:layout_width="244dp"
         android:layout_height="112dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="104dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="124dp"
         android:onClick="ListaTareas"
         android:text="Lista de Tareas"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_nueva"
+        android:layout_width="244dp"
+        android:layout_height="112dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="96dp"
+        android:onClick="nuevaTarea"
+        android:text="Nueva Tarea"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_lista" />
 </androidx.constraintlayout.widget.ConstraintLayout>

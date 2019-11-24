@@ -35,6 +35,13 @@ public class Nueva_tarea extends AppCompatActivity {
                 android.R.layout.simple_spinner_item, datos2);
 
 
+
+        Spinner prioridad_spinner = findViewById(R.id.spinner_prioridad);
+        Spinner realizada_spinner = findViewById(R.id.spinner_sino);
+
+        prioridad_spinner.setAdapter(adapter);
+        realizada_spinner.setAdapter(adapter2);
+
     }
 
     public void confirmar(View view){
@@ -78,7 +85,7 @@ public class Nueva_tarea extends AppCompatActivity {
     }
 
 }
-    protected void cancelar(View view){
+    public void cancelar(View view){
         Intent i;
         i = new Intent(this, Menu.class);
         startActivity(i);
